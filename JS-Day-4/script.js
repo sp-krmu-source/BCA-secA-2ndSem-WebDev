@@ -6,7 +6,7 @@
 //  let hasEven = number.every(x => x % 2 === 0);
 //  console.log(hasEven)
 
-  let fruits = ["apple", "banana", "cherry"];
+let fruits = ["apple", "banana", "cherry"];
  let res = fruits.splice(0, 2, "orange", "grape");
 //  console.log(res);
  console.log(fruits)

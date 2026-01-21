@@ -30,6 +30,7 @@ function palindrome() {
     let arr = [1, 2, 3, 4, 1]
     let temp = [] //[1,2,3,2,1]
     let original = [] //[1,2,3,2,1]
+    // let original =[...arr] //spread operator
 
     // push the existant array in to original empty array
     for (let i = 0; i < arr.length; i++) {
