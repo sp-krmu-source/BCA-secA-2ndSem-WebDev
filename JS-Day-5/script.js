@@ -27,4 +27,6 @@ console.log(`my name is s.p Acharya and im pursuing ${program} from ${university
 let arr=[1,2,3]
 let arr2=[4,5,6]
 let newArray = [...arr,...arr2];
-console.log(newArray)
+console.log(newArray);
+
+
