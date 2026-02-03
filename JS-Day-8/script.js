@@ -15,4 +15,11 @@ for(let i=0;i<subHeading.length;i++){
 }
 
 
+const h2heading=document.getElementsByTagName("h2");
+console.log(h2heading);
+
+for(i=0;i<h2heading.length;i++){
+    h2heading[i].style.backgroundColor="cyan"
+}
+
 
