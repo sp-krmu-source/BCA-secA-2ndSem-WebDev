@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Mini DOM Project</title>
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+        }
+
+        li {
+            margin: 8px 0;
+        }
+
+        button {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Task Manager</h2>
+
+    <input type="text" id="taskInput" placeholder="Enter task">
+    <button onclick="addTask()">Add Task</button>
+
+    <ul id="taskList"></ul>
+
+    <p>Total Tasks: <span id="count">0</span></p>
+
+    <script>
+        function addTask() {
+            const input = document.getElementById("taskInput");
+            const taskList = document.getElementById("taskList");
+
+            if (input.value === "") {
+                alert("Please enter a task");
+                return;
+            }
+
+            // 1️⃣ createElement
+            const li = document.createElement("li");
+            li.textContent = input.value;
+
+            // create delete button
+            const deleteBtn = document.createElement("button");
+            deleteBtn.textContent = "❌";
+
+            // inline onclick
+            deleteBtn.setAttribute("onclick", "deleteTask(this)");
+
+            // appendChild
+            li.appendChild(deleteBtn);
+            taskList.appendChild(li);
+
+            input.value = "";
+            updateCount();
+        };
+
+        function deleteTask(btn) {
+            // parentElement
+            const taskItem = btn.parentElement;
+            taskItem.remove(); // remove
+            updateCount();
+        }
+        // 4️⃣ children usage
+        function updateCount() {
+            const taskList = document.getElementById("taskList");
+            document.getElementById("count").textContent = taskList.children.length;
+        }
+
+    </script>
+</body>
+
+</html>

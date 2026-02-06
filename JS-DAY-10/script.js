@@ -37,6 +37,8 @@ setInterval(() => {
     console.log(date);
 }, 1000)
 
+
+// Event handle
 function handleClick() {
     document.getElementById("output").textContent = "Button clicked!";
 }
