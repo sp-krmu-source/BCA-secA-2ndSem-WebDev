@@ -2,35 +2,38 @@
 // callback hell
 // Disadvantages of callback hell: 
 
-// setTimeout(() => {
-//     console.log("1");
-//     setTimeout(() => {
-//         console.log("2");
-//         setTimeout(() => {
-//             console.log("3");
-//             setTimeout(() => {
-//                 console.log("4");
-//                 setTimeout(() => {
-//                     console.log("5");
-//                 }, 1000)
-//             }, 1000)
-//         }, 1000)
-//     }, 1000)
-// }, 1000)
+// Print 1 to 5 in a duration of 1 second
 
-// function pro(num){
-//     return new Promise((res,rej)=>{
-//         setTimeout(()=>{
-//             console.log(num);
-//             res()
-//         },1000)
-//     })
-// }
-// pro(1)
-// .then(()=>pro(2))
-// .then(()=>pro(3))
-// .then(()=>pro(4))
-// .then(()=>pro(5))
+setTimeout(() => {
+    console.log("1");
+    setTimeout(() => {
+        console.log("2");
+        setTimeout(() => {
+            console.log("3");
+            setTimeout(() => {
+                console.log("4");
+                setTimeout(() => {
+                    console.log("5");
+                }, 1000)
+            }, 1000)
+        }, 1000)
+    }, 1000)
+}, 1000)
+
+// Promise chaining
+function pro(num){
+    return new Promise((res,rej)=>{
+        setTimeout(()=>{
+            console.log(num);
+            res()
+        },1000)
+    })
+}
+pro(1)
+.then(()=>pro(2))
+.then(()=>pro(3))
+.then(()=>pro(4))
+.then(()=>pro(5))
 
 
 // Promise is introduced to overcome the disadvantages of callback hell
