@@ -8,12 +8,9 @@ const output=document.getElementById("output");
 //     output.textContent=courseInput.value
 // })
 
-
 Form.addEventListener("submit",(event)=>{
-
+    // to prevent the autorefresh
     event.preventDefault();
-   
-
 
     const name=nameInput.value;
     const course=courseInput.value;
